@@ -7,7 +7,32 @@
 
 
 #include "xc.h"
+#include <stdio.h>
 
+
+char tracker[100];
+
+int gameRound(int round){
+    //Add a random value (Red, Green, Blue, or Yellow), to the tracker list here
+    
+    char outMessage[20];
+    sprintf(outMessage, "Round %d. Ready? Begin.", round); //Step 5
+    delay(50); //Allows the user time to read the message
+    
+    int x = 0;
+    for(; tracker[x] != '\0'; x++){
+        outputInstruction(tracker[x]); //Step 6
+    }
+    
+    lcd_printStr("Your Turn!"); //Step 8
+    
+    //Get user input here
+    //Make sure to check that it matches the correct tracker value
+    //Maybe have a catch case for when the user "disappears"? As in, if the user does not input anything for longer than 10 seconds, its game over?
+    
+    
+    
+}
 
 void newGame(){
     /*
